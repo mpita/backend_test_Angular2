@@ -34,14 +34,14 @@ MongoClient.connect("mongodb://localhost:27017/test-angular2", function(err, db)
   }
 });
 
-//var endpoints = require('./routes/endpoints');
+var endpoints = require('./routes/endpoints');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 app.options("*", cors());
 
-//app.use("/", endpoints);
+app.use("/", endpoints);
 
 var routes = express.Router();
 
