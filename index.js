@@ -12,7 +12,7 @@ var MongoClient = require('mongodb').MongoClient;
 MongoClient.connect("mongodb://localhost:27017/test-angular2", function(err, db) {
   if(!err) {
     console.log("MongoDb Connect");
-    
+    /*
     var ticketCollection = db.collection('tickets');
     var ticket1 = {
             'id': 1, 
@@ -28,16 +28,20 @@ MongoClient.connect("mongodb://localhost:27017/test-angular2", function(err, db)
     ticketCollection.insert(ticket1);
     ticketCollection.insert(ticket2, {w:1}, function(err, result) {});
     ticketCollection.insert(ticketSerie, {w:1}, function(err, result) {});
+    */
   } else {
       console.log("Error MongoDb Connect: ", err);
   }
 });
+
+//var endpoints = require('./routes/endpoints');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 app.options("*", cors());
 
+//app.use("/", endpoints);
 
 var routes = express.Router();
 
